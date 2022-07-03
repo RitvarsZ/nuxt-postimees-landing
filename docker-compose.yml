@@ -2,7 +2,7 @@ services:
   web:
     build: ./
     volumes:
-       - ./src:/usr/src/app
+       - ./app:/usr/src/app
     ports:
       - 80:3000
     environment:
@@ -10,4 +10,4 @@ services:
       - PORT=3000
     command:
        sh -c 'npm run dev'
-      #  sh -c 'npm run build && npm run start' # for production
+      #  sh -c 'npm run build' # for production
