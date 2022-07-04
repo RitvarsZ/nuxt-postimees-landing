@@ -18,5 +18,9 @@ declare interface IArticle {
             },
         },
         title: { et: string }
+    },
+    meta: {
+        actualPublishTime: string,
+        commentCount: number
     }
 }
