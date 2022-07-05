@@ -4,12 +4,17 @@ const BREAKPOINTS = {
 
 export default function useMobile() {
     const isDesktop = ref(false);
+
     onMounted(() => {
         updateWidth();
         window.addEventListener('resize', updateWidth);
     });
 
-    const updateWidth = () => {
+    onUnmounted(() => {
+        window.removeEventListener('resize', updateWidth);
+    });
+
+    function updateWidth() {
         isDesktop.value = window.innerWidth > BREAKPOINTS.desktop;
     };
 
